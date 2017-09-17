@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import SearchBar from '../searchbar/searchbar.js';
 import SearchResults from '../searchresults/searchresults.js';
+import PlayList from '../playlist/playlist.js'
 
 
 
@@ -11,17 +12,27 @@ class App extends React.Component {
   constructor(props){
   super(props);
 
+  let song = {
+  name:'Sage Francis',
+  artist:'Grace',
+  album:'Copper Gone'
+}
 
   this.state = {
       searchResults:[
-        {
-         name:'Sage Francis',
-         artist:'Grace',
-         album:'Copper Gone'
-       },
+        this.song,
+        this.song
+     ],
+    playlistName:'PlayList',
+    playlistTracks:[
+    this.song,
+    this.song
+    ]
+  };
+};
 
-    ]};
-  }
+//add track method
+
   render() {
     return (
       <div>
@@ -30,7 +41,7 @@ class App extends React.Component {
     <SearchBar/>
     <div className="App-playlist">
       <SearchResults searchResults={this.state.searchResults}/>
-      <playList/>
+      <PlayList playlistName={this.state.playlistName} playlistTracks={this.state.playlistTracks}/>
     </div>
   </div>
 </div>
