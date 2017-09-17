@@ -9,6 +9,7 @@ class Track extends React.Component {
     <p>track artist will go here| track album will go here</p>
   </div>
   <a className="Track-action">/* + or - will go here */</a>
+  }
 </div>
     )
   }
